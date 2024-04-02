@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #000;
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+
+        h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 3em;
+            color: #f5f8fb;
+            animation: fadeInText 2s ease-out 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="your video" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h1>Happy Birthday Motu</h1>
+
+    <script>
+        // After 4 seconds, redirect to the home page
+        setTimeout(function() {
+            window.location.href = "r.html"; // Change to your home page URL
+        }, 6000);
+    </script>
+</body>
+</html>
