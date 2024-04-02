@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Story</title>
+    <style>
+        #start {
+            display: none;
+        }
+
+        @keyframes birthdayAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        section {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        section.hidden {
+            opacity: 0;
+            display: none;
+        }
+
+        .couple-animation {
+            animation: coupleAnimation 5s infinite;
+        }
+
+        @keyframes coupleAnimation {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("image\\Blue White Simple Happy Birthday Instagram Post (1).jpg");
+    background-size: cover;  /* Make the background image cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+
+        header {
+            background-color: #87CEEB;
+            /* LightSkyBlue */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #ADD8E6;
+            /* LightBlue */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            background-color: #5F9EA0;
+            /* CadetBlue */
+        }
+
+        nav a:hover {
+            background-color: #4682B4;
+            /* SteelBlue */
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: 300px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .page {
+            text-align: center;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            color: #333;
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .option {
+            cursor: pointer;
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .option:hover {
+            background-color: #90ee90;
+            /* LightGreen */
+        }
+
+        #ringImage {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        #yesButton,
+        #noButton {
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        #yesButton:hover,
+        #noButton:hover {
+            background-color: #5cb85c;
+        }
+
+        #noButton {
+            color: #fff;
+            background-color: #d9534f;
+            position: absolute;
+        }
+
+        #noButton:active {
+            transform: scale(0.95);
+        }
+
+        #dateBox {
+            position: relative;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #Love_Quiz,
+        #gallery,
+        #Love_letter {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(90deg, #ff69b4, #87cefa, #98fb98, #ff69b4);
+            background-size: 400% 400%;
+            animation: birthdayAnimation 15s infinite;
+        }
+
+        #galleryButtons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .gallery-button {
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .gallery-button:hover {
+            background-color: #87CEEB;
+            /* LightSkyBlue */
+        }
+
+        .selected-gallery {
+            background-color: #87CEEB;
+            /* LightSkyBlue */
+        }
+
+        .alternate-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .text-content {
+            max-width: 500px;
+            padding: 10px;
+            text-align: left;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-content {
+            max-width: 12000px;
+        }
+
+        .text-content h2 {
+            color: #333;
+        }
+
+        .text-content p {
+            color: #555;
+        }
+
+        /* Alternate sides for each section */
+        .alternate-section:nth-child(even) .text-content {
+            order: 2;
+        }
+
+        .alternate-section:nth-child(even) .image-content {
+            order: 1;
+        }
+
+
+        .image-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .image-frame {
+            display: inline-block;
+            width: 30%;
+            /* Adjust the width as needed */
+            margin: 10px;
+            /* Adjust the margin as needed */
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .image-frame img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+           
+        }
+
+        .image-frame:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-caption {
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body >
+
+    <header>
+        <h1>Happy Birthday someone</h1>
+    </header>
+
+    <br>
+    <section id="birthdayAnimation">
+
+        <div class="birthday-content" style="text-align: center;">
+            <h1>🎉 Happy Birthday ! 🎂</h1>
+            <p>Wishing you a day filled with joy, love, and wonderful surprises!</p>
+            <p>May all your dreams come true my bff/bf happy birthday</p>
+            <img src=" your image image\\hehe.jpg" alt="Section 1 Image" style="align-content: center;">
+            <br>
+            <button class="option" onclick="startBirthdayAnimation()">Start Celebration</button>
+        </div>
+    </section>
+    <div id="start">
+        <nav>
+            <br>
+            <a href="#gallery" onclick="showSection('gallery')">Photo Gallery</a>
+            <a href="#Love_Quiz" onclick="showSection('Love_Quiz')">Love Quiz</a>
+            <a href="#Love_letter" onclick="showSection('Love_letter')">Love Letter</a>
+            <br>
+            <br>
+        </nav>
+
+        <section id="Love_letter" class="hidden">
+            <div class="alternate-section">
+                <div class="text-content">
+                    <h2>Dear Motu,</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quo necessitatibus 
+               tempora recusandae, officiis amet ab vel molestiae. Reprehenderit neque voluptatem
+                accusantium? Illum voluptas blanditiis porro eum! Aperiam, suscipit perspiciatis
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quo necessitatibus 
+               tempora recusandae, officiis amet ab vel molestiae. Reprehenderit neque voluptatem
+                accusantium? Illum voluptas blanditiis porro eum! Aperiam, suscipit perspiciatis
+                        </p>
+                </div>
+                <div class="image-content">
+                    <img src=" your image https://storage.prompt-hunt.workers.dev/clfswylk70012l808n1461ch0_1"
+                        alt="Section 1 Image">
+                </div>
+            </div>
+
+            <div class="alternate-section">
+                <div class="text-content">
+                    <h2>Dear Laddu,</h2>
+                    <pre>
+               Lorem ipsum dolor sit amet consectetur adipi 
+               tempora recusandae, officiis amet ab vel mo
+                accusantium? Illum voluptas blanditiis por
+                Lorem ipsum dolor sit amet consectetur adipi 
+                tempora recusandae, officiis amet ab vel mo
+                 accusantium? Illum voluptas blanditiis po
+                 Lorem ipsum dolor sit amet consectetur adipi 
+                 tempora recusandae, officiis amet ab vel mo
+                  accusantium? Illum voluptas blanditiis po</pre>
+                </div>
+                <div class="image-content">
+                    <img src=" your image https://img.freepik.com/photos-premium/symbolisant-amour-entre-garcon-mignon-fille-mignonne_980716-3405.jpg"
+                        alt="Section 2 Image">
+                </div>
+            </div>
+            <div class="alternate-section">
+                <div class="text-content">
+                    <h2>Dear someone,</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, in totam! Quae fugiat obcaecati, est veritatis quibusdam, atque dignissimos autem, blanditiis tenetur modi amet consectetur ducimus eius cum ullam repudiandae. 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quo necessitatibus 
+                        tempora recusandae, officiis amet ab vel molestiae. Reprehenderit neque voluptatem
+                         accusantium? Illum voluptas blanditiis porro eum! Aperiam, suscipit perspiciatis
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quo necessitatibus 
+                         tempora recusandae, officiis amet ab vel molestiae. Reprehenderit neque voluptatem
+                          accusantium? Illum voluptas blanditiis porro eum! Aperiam, suscipit perspiciatis</p>
+                </div>
+                <div class="image-content">
+                    <img src=" your image https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiC_Wqdb3hckpmwLE67Miq2VbTOwbPDJ9NYYgLfWJI49JQzmsB8qhF_Vhg_SUp8fNMVsE&usqp=CAU"
+                        alt="Section 1 Image">
+                </div>
+            </div>
+            <p>
+
+            </p>
+        </section>
+
+        <section id="gallery" class="hidden">
+            <div class="page">
+                <h2 style="text-align: center;">Photo Gallery</h2>
+
+                <div id="galleryButtons">
+                    <button class="gallery-button" onclick="showGallery('you')">You</button>
+                    <button class="gallery-button" onclick="showGallery('me')">Me</button>
+                    <button class="gallery-button" onclick="showGallery('us')">Us</button>
+                    <button class="gallery-button" onclick="showGallery('friends')">Friends</button>
+                </div>
+
+                <div id="you-section" class="image-section" style="display: none;">
+                    <h3>You</h3>
+                    <!-- The first image for the "You" section -->
+                    <div class="image-frame"><img src=" your image image\\you\\IMG_20230115_212540.jpg" alt="You Image 1">
+                        <div class="image-caption">You Image 1</div>
+                    </div>
+
+
+                    <div class="image-frame"><img src=" your image image\\you\\IMG20230306174240.jpg" alt="You Image 2">
+                        <div class="image-caption">You Image 2</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\IMG20230306174243.jpg" alt="You Image 3">
+                        <div class="image-caption">You Image 3</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me1.jpg" alt="You Image 4">
+                        <div class="image-caption">You Image 4</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me2.jpg" alt="You Image 5">
+                        <div class="image-caption">You Image 5</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me3.jpg" alt="You Image 6">
+                        <div class="image-caption">You Image 6</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me4.jpg" alt="You Image 7">
+                        <div class="image-caption">You Image 7</div>
+                    </div>
+                    <div class="image-frame"><img src=" your image image\\you\\me5.jpg" alt="You Image 8">
+                        <div class="image-caption">You Image 8</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me6.jpg" alt="You Image 9">
+                        <div class="image-caption">You Image 9</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me7.jpg" alt="You Image 10">
+                        <div class="image-caption">You Image 10</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me8.jpg" alt="You Image 11">
+                        <div class="image-caption">You Image 11</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me9.jpg" alt="You Image 12">
+                        <div class="image-caption">You Image 12</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me10.jpg" alt="You Image 13">
+                        <div class="image-caption">You Image 13</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me11.jpg" alt="You Image 14">
+                        <div class="image-caption">You Image 14</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me12.jpg" alt="You Image 15">
+                        <div class="image-caption">You Image 15</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me13.jpg" alt="You Image 16">
+                        <div class="image-caption">You Image 16</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me14.jpg" alt="You Image 17">
+                        <div class="image-caption">You Image 17</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me15.jpg" alt="You Image 18">
+                        <div class="image-caption">You Image 18</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me16.jpg" alt="You Image 19">
+                        <div class="image-caption">You Image 19</div>
+                    </div>
+
+                    <!-- Continue the structure for the remaining images if needed -->
+                    <div class="image-frame"><img src=" your image image\\you\\me17.jpg" alt="You Image 13">
+                        <div class="image-caption">You Image 13</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me18.jpg" alt="You Image 14">
+                        <div class="image-caption">You Image 14</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me19.jpg" alt="You Image 15">
+                        <div class="image-caption">You Image 15</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me20.jpg" alt="You Image 16">
+                        <div class="image-caption">You Image 16</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me21.jpg" alt="You Image 17">
+                        <div class="image-caption">You Image 17</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me22.jpg" alt="You Image 18">
+                        <div class="image-caption">You Image 18</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me23.jpg" alt="You Image 19">
+                        <div class="image-caption">You Image 19</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me24.jpg" alt="You Image 16">
+                        <div class="image-caption">You Image 16</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me25.jpg" alt="You Image 17">
+                        <div class="image-caption">You Image 17</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me26.jpg" alt="You Image 18">
+                        <div class="image-caption">You Image 18</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me27.jpg" alt="You Image 19">
+                        <div class="image-caption">You Image 19</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me28.jpg" alt="You Image 16">
+                        <div class="image-caption">You Image 16</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me29.jpg" alt="You Image 17">
+                        <div class="image-caption">You Image 17</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me30.jpg" alt="You Image 18">
+                        <div class="image-caption">You Image 18</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me31.jpg" alt="You Image 19">
+                        <div class="image-caption">You Image 19</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me32.jpg" alt="You Image 16">
+                        <div class="image-caption">You Image 16</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me33.jpg" alt="You Image 17">
+                        <div class="image-caption">You Image 17</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me34.jpg" alt="You Image 18">
+                        <div class="image-caption">You Image 18</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\you\\me35.jpg" alt="You Image 19">
+                        <div class="image-caption">You Image 19</div>
+                    </div>
+                </div>
+
+                <div id="me-section" class="image-section" style="display: none;">
+                    <h3>Me</h3>
+                    <!-- The first image for the "Me" section -->
+                    <div class="image-frame"><img src=" your image image\\me\\e1.jpg" alt="Me Image 1">
+                        <div class="image-caption">Me Image 1</div>
+                    </div>
+                    <div class="image-frame"><img src=" your image image\\me\\e11.jpg" alt="Me Image 2">
+                        <div class="image-caption">Me Image 2</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e10.jpg" alt="Me Image 3">
+                        <div class="image-caption">Me Image 3</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e12.jpg" alt="Me Image 4">
+                        <div class="image-caption">Me Image 4</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e13.jpg" alt="Me Image 5">
+                        <div class="image-caption">Me Image 5</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e14.jpg" alt="Me Image 6">
+                        <div class="image-caption">Me Image 6</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e15.jpg" alt="Me Image 7">
+                        <div class="image-caption">Me Image 7</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e16.jpg" alt="Me Image 8">
+                        <div class="image-caption">Me Image 8</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e17.jpg" alt="Me Image 9">
+                        <div class="image-caption">Me Image 9</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e19.jpg" alt="Me Image 11">
+                        <div class="image-caption">Me Image 11</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e20.jpg" alt="Me Image 12">
+                        <div class="image-caption">Me Image 12</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e21.jpg" alt="Me Image 13">
+                        <div class="image-caption">Me Image 13</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e2.jpg" alt="Me Image 14">
+                        <div class="image-caption">Me Image 14</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e22.jpg" alt="Me Image 15">
+                        <div class="image-caption">Me Image 15</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e23.jpg" alt="Me Image 16">
+                        <div class="image-caption">Me Image 16</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e24.jpg" alt="Me Image 17">
+                        <div class="image-caption">Me Image 17</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e25.jpg" alt="Me Image 18">
+                        <div class="image-caption">Me Image 18</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e3.jpg" alt="Me Image 19">
+                        <div class="image-caption">Me Image 19</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e4.jpg" alt="Me Image 15">
+                        <div class="image-caption">Me Image 15</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e5.jpg" alt="Me Image 16">
+                        <div class="image-caption">Me Image 16</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e6.jpg" alt="Me Image 17">
+                        <div class="image-caption">Me Image 17</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e7.jpg" alt="Me Image 18">
+                        <div class="image-caption">Me Image 18</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\me\\e8.jpg" alt="Me Image 19">
+                        <div class="image-caption">Me Image 19</div>
+                    </div>
+                    <div class="image-frame"><img src=" your image image\\me\\e9.jpg" alt="Me Image 19">
+                        <div class="image-caption">Me Image 20</div>
+                    </div>
+                    <!-- Repeat the structure for the remaining images if needed -->
+
+                </div>
+
+                <div id="us-section" class="image-section" style="display: none;">
+                    <h3>Us</h3>
+                    <!-- The first image for the "Us" section -->
+                    <div class="image-frame"><img src=" your image image\\us\\IMG20230213150633.jpg" alt="Us Image 1">
+                        <div class="image-caption">Us Image 1</div>
+                    </div>
+                    <div class="image-frame"><img src=" your image image\\us\\WhatsApp Image 2024-01-03 at 21.41.18_721bdb4e.jpg"
+                            alt="Us Image 2">
+                        <div class="image-caption">Us Image 2</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\WhatsApp Image 2024-01-03 at 21.41.19_0f5bc095.jpg"
+                            alt="Us Image 3">
+                        <div class="image-caption">Us Image 3</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\WhatsApp Image 2024-01-03 at 21.41.19_95ce4418.jpg"
+                            alt="Us Image 4">
+                        <div class="image-caption">Us Image 4</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\WhatsApp Image 2024-01-03 at 21.41.19_de19419e.jpg"
+                            alt="Us Image 5">
+                        <div class="image-caption">Us Image 5</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\WhatsApp Image 2024-01-03 at 21.41.19_e5a09f4b.jpg"
+                            alt="Us Image 6">
+                        <div class="image-caption">Us Image 6</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\WhatsApp Image 2024-01-03 at 21.41.21_0ee8ce1e.jpg"
+                            alt="Us Image 7">
+                        <div class="image-caption">Us Image 7</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q1.jpg" alt="Us Image 8">
+                        <div class="image-caption">Us Image 8</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q11.jpg" alt="Us Image 9">
+                        <div class="image-caption">Us Image 9</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q10.jpg" alt="Us Image 10">
+                        <div class="image-caption">Us Image 10</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q12.jpg" alt="Us Image 11">
+                        <div class="image-caption">Us Image 11</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q13.jpg" alt="Us Image 12">
+                        <div class="image-caption">Us Image 12</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q14.jpg" alt="Us Image 13">
+                        <div class="image-caption">Us Image 13</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q15.jpg" alt="Us Image 14">
+                        <div class="image-caption">Us Image 14</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q16.jpg" alt="Us Image 15">
+                        <div class="image-caption">Us Image 15</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q17.jpg" alt="Us Image 16">
+                        <div class="image-caption">Us Image 16</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q18.jpg" alt="Us Image 17">
+                        <div class="image-caption">Us Image 17</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q19.jpg" alt="Us Image 18">
+                        <div class="image-caption">Us Image 18</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q20.jpg" alt="Us Image 19">
+                        <div class="image-caption">Us Image 19</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q21.jpg" alt="Us Image 20">
+                        <div class="image-caption">Us Image 20</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q2.jpg" alt="Us Image 21">
+                        <div class="image-caption">Us Image 21</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q22.jpg" alt="Us Image 22">
+                        <div class="image-caption">Us Image 22</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q23.jpg" alt="Us Image 23">
+                        <div class="image-caption">Us Image 23</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q24.jpg" alt="Us Image 24">
+                        <div class="image-caption">Us Image 24</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q25.jpg" alt="Us Image 25">
+                        <div class="image-caption">Us Image 25</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q3.jpg" alt="Us Image 26">
+                        <div class="image-caption">Us Image 26</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q4.jpg" alt="Us Image 27">
+                        <div class="image-caption">Us Image 27</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q5.jpg" alt="Us Image 28">
+                        <div class="image-caption">Us Image 28</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q6.jpg" alt="Us Image 29">
+                        <div class="image-caption">Us Image 29</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q7.jpg" alt="Us Image 30">
+                        <div class="image-caption">Us Image 30</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q8.jpg" alt="Us Image 31">
+                        <div class="image-caption">Us Image 31</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q9.jpg" alt="Us Image 32">
+                        <div class="image-caption">Us Image 32</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q1.jpg" alt="Us Image 33">
+                        <div class="image-caption">Us Image 33</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q31.jpg" alt="Us Image 34">
+                        <div class="image-caption">Us Image 34</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q30.jpg" alt="Us Image 35">
+                        <div class="image-caption">Us Image 35</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q32.jpg" alt="Us Image 36">
+                        <div class="image-caption">Us Image 36</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q33.jpg" alt="Us Image 37">
+                        <div class="image-caption">Us Image 37</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q34.jpg" alt="Us Image 38">
+                        <div class="image-caption">Us Image 38</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q35.jpg" alt="Us Image 39">
+                        <div class="image-caption">Us Image 39</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q36.jpg" alt="Us Image 40">
+                        <div class="image-caption">Us Image 40</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q37.jpg" alt="Us Image 41">
+                        <div class="image-caption">Us Image 41</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q38.jpg" alt="Us Image 42">
+                        <div class="image-caption">Us Image 42</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q39.jpg" alt="Us Image 43">
+                        <div class="image-caption">Us Image 43</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q40.jpg" alt="Us Image 44">
+                        <div class="image-caption">Us Image 44</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\us\\q41.jpg" alt="Us Image 45">
+                        <div class="image-caption">Us Image 45</div>
+                    </div>
+                </div>
+
+                <div id="friends-section" class="image-section" style="display: none;">
+                    <h3>Friends</h3>
+                    <!-- The first image for the "Friends" section -->
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG_20230402_211001.jpg" alt="Friends Image 1">
+                        <div class="image-caption">Friends Image 1</div>
+                    </div>
+                    <!-- Add more images similarly -->
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230321-WA0073.jpg" alt="Friends Image 2">
+                        <div class="image-caption">Friends Image 2</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230325-WA0020.jpg" alt="Friends Image 3">
+                        <div class="image-caption">Friends Image 3</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230401-WA0000.jpg" alt="Friends Image 4">
+                        <div class="image-caption">Friends Image 4</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0010.jpg" alt="Friends Image 5">
+                        <div class="image-caption">Friends Image 5</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0011.jpg" alt="Friends Image 6">
+                        <div class="image-caption">Friends Image 6</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0012.jpg" alt="Friends Image 7">
+                        <div class="image-caption">Friends Image 7</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0013.jpg" alt="Friends Image 8">
+                        <div class="image-caption">Friends Image 8</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0015.jpg" alt="Friends Image 9">
+                        <div class="image-caption">Friends Image 9</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0016.jpg" alt="Friends Image 10">
+                        <div class="image-caption">Friends Image 10</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0018.jpg" alt="Friends Image 11">
+                        <div class="image-caption">Friends Image 11</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0021.jpg" alt="Friends Image 12">
+                        <div class="image-caption">Friends Image 12</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0022.jpg" alt="Friends Image 13">
+                        <div class="image-caption">Friends Image 13</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0023.jpg" alt="Friends Image 14">
+                        <div class="image-caption">Friends Image 14</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0026.jpg" alt="Friends Image 15">
+                        <div class="image-caption">Friends Image 15</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0027.jpg" alt="Friends Image 16">
+                        <div class="image-caption">Friends Image 16</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0012.jpg" alt="Friends Image 17">
+                        <div class="image-caption">Friends Image 17</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0013.jpg" alt="Friends Image 18">
+                        <div class="image-caption">Friends Image 18</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\IMG-20230402-WA0015.jpg" alt="Friends Image 19">
+                        <div class="image-caption">Friends Image 19</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\w1.jpg" alt="Friends Image 15">
+                        <div class="image-caption">Friends Image 15</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\w2.jpg" alt="Friends Image 16">
+                        <div class="image-caption">Friends Image 16</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\w3.jpg" alt="Friends Image 17">
+                        <div class="image-caption">Friends Image 17</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\w5.jpg" alt="Friends Image 18">
+                        <div class="image-caption">Friends Image 18</div>
+                    </div>
+
+                    <div class="image-frame"><img src=" your image image\\friends\\w4.jpg" alt="Friends Image 19">
+                        <div class="image-caption">Friends Image 19</div>
+                    </div>
+
+                    <!-- Repeat the structure for the remaining images if needed -->
+
+                </div>
+                <div id="us-section" class="image-section" style="display: none;">
+
+
+                </div>
+        </section>
+
+        <section id="Love_Quiz">
+            <div class="page" id="page1">
+                <h1>Happy Birthaday </h1>
+                <h1>Birthday Treasure Hunt</h1>
+                <p>Dear someone,</p>
+                <p>Our journey together is an adventure, and I have a special quest for you.</p>
+                <p>Let's take a journey through the special moments we've shared together(from very first day we met).
+                </p>
+                <p>Click the button below to start your treasure hunt!</p>
+                <button class="option" onclick="nextQuestion()">Start Hunt</button>
+            </div>
+
+            <div class="page" id="page2" style="display: none;">
+                <h1>Question #1</h1>
+                <p class="question">Where was our initial encounter location?</p>
+                <div class="options">
+                    <button class="option" onclick="incorrectAnswer()">School</button>
+                    <button class="option" onclick="incorrectAnswer()">Mess</button>
+                    <button class="option" onclick="correctAnswer()">Lab</button>
+                    <button class="option" onclick="incorrectAnswer()">Lecture</button>
+                </div>
+            </div>
+
+            <div class="page" id="page3" style="display: none;">
+                <h1>Question #2</h1>
+                <p class="question">Where did we go on our first date?</p>
+                <div class="options">
+                    <button class="option" onclick="incorrectAnswer()">Park</button>
+                    <button class="option" onclick="correctAnswer()">Mall</button>
+                    <button class="option" onclick="incorrectAnswer()">Cafe</button>
+                    <button class="option" onclick="incorrectAnswer()">Movies</button>
+                </div>
+            </div>
+
+            <div class="page" id="page4" style="display: none;">
+                <h1>Question #3</h1>
+                <p class="question">Where did we had first kiss?</p>
+                <div class="options">
+                    <button class="option" onclick="incorrectAnswer()"> ke samne wali place</button>
+                    <button class="option" onclick="incorrectAnswer()">Bridge</button>
+                    <button class="option" onclick="correctAnswer()">B/W  & cafe</button>
+                    <button class="option" onclick="incorrectAnswer()">College ke bhar</button>
+                </div>
+            </div>
+
+            <div class="page" id="page5" style="display: none;">
+                <h1>Question #4</h1>
+                <p class="question">Where did I first say "I love you"?</p>
+                <div class="options">
+                    <button class="option" onclick="incorrectAnswer()">Instagram</button>
+                    <button class="option" onclick="incorrectAnswer()">Telegram</button>
+                    <button class="option" onclick="correctAnswer()">Whatapp</button>
+                    <button class="option" onclick="incorrectAnswer()">Video call</button>
+                </div>
+            </div>
+            <div class="page" id="page6" style="display: none;">
+                <h1>Question #5</h1>
+                <p class="question">Where did we had first Lip kiss?</p>
+                <div class="options">
+                    <button class="option" onclick="incorrectAnswer()"> ke samne wali place</button>
+                    <button class="option" onclick="incorrectAnswer()"> Bridge</button>
+                    <button class="option" onclick="correctAnswer()">Park</button>
+                    <button class="option" onclick="incorrectAnswer()">B/W  & cafe</button>
+                </div>
+            </div>
+            <div class="page" id="page7" style="display: none;">
+                <h1>Question #6</h1>
+                <p class="question">What is common in us?</p>
+                <div class="options">
+                    <button class="option" onclick="incorrectAnswer()">Nature</button>
+                    <button class="option" onclick="incorrectAnswer()">Masti</button>
+                    <button class="option" onclick="correctAnswer()">Understanding</button>
+                    <button class="option" onclick="incorrectAnswer()">Study</button>
+                </div>
+            </div>
+            <div class="page" id="page8" style="display: none;">
+                <h1>Question #7</h1>
+                <p class="question">What we love do When we are togather?</p>
+                <div class="options">
+                    <button class="option" onclick="incorrectAnswer()">Study</button>
+                    <button class="option" onclick="incorrectAnswer()">Cafe Dates</button>
+                    <button class="option" onclick="correctAnswer()">Masti & Romance </button>
+                    <button class="option" onclick="incorrectAnswer()">Dance & Party</button>
+                </div>
+            </div>
+            <div class="page" id="page8" style="display: none;">
+                <h1>Question #8</h1>
+                <p class="question">What I love the most in your body?</p>
+                <div class="options">
+                    <button class="option" onclick="incorrectAnswer()">Nose</button>
+                    <button class="option" onclick="incorrectAnswer()">Ear</button>
+                    <button class="option" onclick="correctAnswer()">Eyes</button>
+                    <button class="option" onclick="incorrectAnswer()">Neck</button>
+                </div>
+            </div>
+            <div class="page" id="page9" style="display: none;">
+                <h1>Final Question</h1>
+                <p class="question">Why i love you?</p>
+                <div class="options">
+                    <button class="option" onclick="incorrectAnswer()">you are hot</button>
+                    <button class="option" onclick="incorrectAnswer()">you are cute</button>
+                    <button class="option" onclick="correctAnswer()">your nature</button>
+                    <button class="option" onclick="incorrectAnswer()">you love me</button>
+                </div>
+            </div>
+            <div class="page" id="page10" style="display: none;">
+
+                <div id="dateBox">
+                    <h2>Are you ready for more surprise and shocks?</h2>
+                    <button id="yesButton" onclick="showYesAnimation()">Yes</button>
+                    <button id="noButton" onclick="moveAway()">No</button>
+                </div>
+
+
+            </div>
+
+        </section>
+    </div>
+    <script>
+        function startBirthdayAnimation() {
+            var birthdaySection = document.getElementById('birthdayAnimation');
+            birthdaySection.style.display = 'none';
+
+
+            var start = document.getElementById('start');
+            start.style.display = 'block';
+            // Add more animation or transition effects as needed
+        }
+        function showGallery(section) {
+            document.getElementById('you-section').style.display = 'none';
+            document.getElementById('me-section').style.display = 'none';
+            document.getElementById('us-section').style.display = 'none';
+            document.getElementById('friends-section').style.display = 'none';
+            document.getElementById(section + '-section').style.display = 'block';
+        }
+        function moveAway() {
+            var noButton = document.getElementById('noButton');
+            var dateBox = document.getElementById('dateBox');
+
+            var randomX = Math.floor(Math.random() * (dateBox.offsetWidth - noButton.offsetWidth));
+            var randomY = Math.floor(Math.random() * (dateBox.offsetHeight - noButton.offsetHeight));
+
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+
+            dateBox.style.transform = 'translateX(0)';
+        }
+
+        var currentQuestion = 1;
+
+        function nextQuestion() {
+            var current = document.getElementById('page' + currentQuestion);
+            current.style.display = 'none';
+
+            currentQuestion++;
+
+            var next = document.getElementById('page' + currentQuestion);
+            if (next) {
+                next.style.display = 'block';
+            }
+        }
+
+        function correctAnswer() {
+            var current = document.getElementById('page' + currentQuestion);
+            current.style.display = 'none';
+
+            currentQuestion++;
+
+            var next = document.getElementById('page' + currentQuestion);
+            if (next) {
+                next.style.display = 'block';
+            }
+        }
+
+        function incorrectAnswer() {
+            alert('Oops! You failed. Maybe try again later.');
+            location.reload(); // Reload the page to start again
+        }
+        function startQuiz() {
+            var birthdayPage = document.querySelector('.birthday-animation');
+            birthdayPage.style.display = 'none';
+
+            var firstQuestion = document.getElementById('page1');
+            firstQuestion.style.display = 'block';
+        }
+
+        // Add a function to show the couple animation at the end
+        function showCoupleAnimation() {
+            var endPage = document.getElementById('page10');
+            endPage.innerHTML += '<p class="couple-animation">💖 Congratulations! You said Yes! 💖</p>';
+        }
+
+        // Modify the "Yes" button click event to show couple animation
+        function showYesAnimation() {
+            showCoupleAnimation();
+            alert('Congratulations! Let the journey of love begin!');
+        }
+        var currentImageIndex = 1; // Start with the second image (index 1)
+
+        function changeImage(section) {
+            var selectedImage = document.getElementById('selected-image');
+            var imagePath = 'gallery/' + section + '/image' + currentImageIndex + '.jpg';
+
+            selectedImage.innerHTML = '<img src=" your image ' + imagePath + '" alt="Selected Image">';
+
+            // Increment the current image index
+            currentImageIndex++;
+
+            // If the index exceeds the number of images, reset it to 1 (for looping)
+            if (currentImageIndex > maxImageIndex(section)) {
+                currentImageIndex = 1;
+            }
+        }
+
+        // Function to get the maximum image index for a section
+        function maxImageIndex(section) {
+            // Set the total number of images for each section
+            var maxIndexMap = {
+                'you': 50,    // Adjust the number of images for each section accordingly
+                'me': 50,
+                'us': 50,
+                'friends': 50
+            };
+
+            return maxIndexMap[section];
+        }
+
+        var currentGallerySection = '';
+
+        function showGallery(section) {
+            document.getElementById('you-section').style.display = 'none';
+            document.getElementById('me-section').style.display = 'none';
+            document.getElementById('us-section').style.display = 'none';
+            document.getElementById('friends-section').style.display = 'none';
+
+            // Reset the current image index when switching between gallery sections
+            currentImageIndex = 1;
+
+            // Show the selected section
+            document.getElementById(section + '-section').style.display = 'block';
+
+            // Set the current gallery section for cycling images
+            currentGallerySection = section;
+
+            // Display the first image for the selected section
+            changeImage(section);
+        }
+
+        function changeImage(section) {
+            var selectedImage = document.getElementById('selected-image');
+            var imagePath = 'gallery/' + section + '/image' + currentImageIndex + '.jpg';
+
+            selectedImage.innerHTML = '<img src=" your image ' + imagePath + '" alt="Selected Image">';
+        }
+
+        function nextImage() {
+            // Increment the current image index
+            currentImageIndex++;
+
+            // Get the maximum image index for the current section
+            var maxIndex = maxImageIndex(currentGallerySection);
+
+            // If the index exceeds the number of images, reset it to 1 (for looping)
+            if (currentImageIndex > maxIndex) {
+                currentImageIndex = 1;
+            }
+
+            // Display the next image
+            changeImage(currentGallerySection);
+        }
+
+        function prevImage() {
+            // Decrement the current image index
+            currentImageIndex--;
+
+            // Get the maximum image index for the current section
+            var maxIndex = maxImageIndex(currentGallerySection);
+
+            // If the index goes below 1, set it to the maximum index (for looping)
+            if (currentImageIndex < 1) {
+                currentImageIndex = maxIndex;
+            }
+
+            // Display the previous image
+            changeImage(currentGallerySection);
+        }
+
+        // Function to get the maximum image index for a section
+        function maxImageIndex(section) {
+            // Set the total number of images for each section
+            var maxIndexMap = {
+                'you': 20,    // Adjust the number of images for each section accordingly
+                'me': 20,
+                'us': 20,
+                'friends': 20
+            };
+
+            return maxIndexMap[section];
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+
+</body>
+
+</html>
